@@ -131,7 +131,8 @@
                   android:visibility="invisible"
                   android:text="@string/private_information"/>
 
-        <View android:layout_width="match_parent" android:visibility="invisible" android:id="@+id/vwLine" android:layout_height="1dp"
+        <View android:layout_width="match_parent" android:id="@+id/vwLine" android:visibility="invisible"
+              android:layout_height="1dp"
               android:background="@color/design_default_color_primary_dark"/>
 
         <com.google.android.material.textfield.TextInputLayout

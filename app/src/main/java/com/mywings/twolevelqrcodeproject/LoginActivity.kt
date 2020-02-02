@@ -1,5 +1,6 @@
 package com.mywings.twolevelqrcodeproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,12 +8,11 @@ import com.mywings.newtwitterapp.process.LoginAsync
 import com.mywings.newtwitterapp.process.OnLoginListener
 import com.mywings.twolevelqrcodeproject.model.User
 import com.mywings.twolevelqrcodeproject.process.ProgressDialogUtil
+import com.mywings.twolevelqrcodeproject.process.UserDataHolder
 import kotlinx.android.synthetic.main.activity_login.*
 import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity(), OnLoginListener {
-
-
 
     private lateinit var progressDialogUtil: ProgressDialogUtil
 
@@ -30,7 +30,12 @@ class LoginActivity : AppCompatActivity(), OnLoginListener {
     }
 
     override fun onLoginSuccess(user: User?) {
-
+        progressDialogUtil.hide()
+        if (null != user) {
+            UserDataHolder.getInstance().selfUser = user
+            val intent = Intent(this@LoginActivity,MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initLogin() {
