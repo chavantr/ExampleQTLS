@@ -6,6 +6,7 @@ import android.widget.Toast
 import com.mywings.messmanagementsystem.process.OnSendOptionListener
 import com.mywings.messmanagementsystem.process.SendOtpAsync
 import com.mywings.twolevelqrcodeproject.process.ProgressDialogUtil
+import kotlinx.android.synthetic.main.activity_verify_otp.*
 import kotlin.random.Random
 
 class VerifyOtpActivity : AppCompatActivity(), OnSendOptionListener {
@@ -21,6 +22,14 @@ class VerifyOtpActivity : AppCompatActivity(), OnSendOptionListener {
         setContentView(R.layout.activity_verify_otp)
         progressDialogUtil = ProgressDialogUtil(this)
         initotp()
+
+        btnConfirm.setOnClickListener {
+            if (txtEnterOtp.text.toString().isNotEmpty() && txtEnterOtp.text.toString().equals(input, false)) {
+                Toast.makeText(this@VerifyOtpActivity, "Amount transferred successfully", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this@VerifyOtpActivity, "Enter valid otp", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     private fun initotp() {
