@@ -14,8 +14,13 @@
             android:networkSecurityConfig="@xml/network_config_setting"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme"
-            android:usesCleartextTraffic="true">
+            android:theme="@style/AppTheme">
+        <activity android:name=".VerifyOtpActivity">
+        </activity>
+        <activity android:name=".ShowTransactionActivity">
+        </activity>
+        <activity android:name=".MakeATransactionActivity">
+        </activity>
         <activity android:name=".ShowDetailsActivity">
         </activity>
         <activity

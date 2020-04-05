@@ -101,6 +101,21 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.ic_make_transaction -> {
+                val makeTransactionActivity = Intent(this@MainActivity, MakeATransactionActivity::class.java)
+                startActivity(makeTransactionActivity)
+                drawer_layout.closeDrawer(GravityCompat.START)
+                return true
+            }
+            R.id.ic_transactions -> {
+                val makeTransactionActivity = Intent(this@MainActivity, MakeATransactionActivity::class.java)
+                startActivity(makeTransactionActivity)
+                drawer_layout.closeDrawer(GravityCompat.START)
+                return true
+            }
+        }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }

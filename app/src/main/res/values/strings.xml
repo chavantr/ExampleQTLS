@@ -31,4 +31,11 @@
     <string name="uid_number">Aadhar number</string>
     <string name="personal_information">Personal Information</string>
     <string name="private_information">Private information</string>
+    <string name="from_account">From Account</string>
+    <string name="to_account">To Account</string>
+    <string name="enter_account_number">Enter account number</string>
+    <string name="verify">Verify</string>
+    <string name="confirm">Confirm</string>
+    <string name="otp_has_been_sent_to_your_register_mobile_number">Otp has been sent to your register mobile number.
+    </string>
 </resources>

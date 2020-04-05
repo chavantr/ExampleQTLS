@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.view.animation.Animation
-import android.view.animation.Interpolator
 import android.view.animation.LinearInterpolator
 import android.view.animation.TranslateAnimation
 import android.widget.Toast
@@ -94,7 +93,7 @@ class QRCodeScanActivity : AppCompatActivity(), OnDecodedCallback, OnLoginListen
                 v.vibrate(500)
             }
             init(decodedData)
-           // init("test@test.com")
+            //init("test@test.com")
         } else {
             Toast.makeText(this@QRCodeScanActivity, "Scan carefully", Toast.LENGTH_LONG).show()
         }
