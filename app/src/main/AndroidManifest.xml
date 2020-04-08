@@ -15,11 +15,17 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".VerifyOtpActivity">
+        <activity android:name=".SuccessActivity">
+        </activity>
+        <activity
+                android:name=".VerifyOtpActivity"
+                android:noHistory="true">
         </activity>
         <activity android:name=".ShowTransactionActivity">
         </activity>
-        <activity android:name=".MakeATransactionActivity">
+        <activity
+                android:name=".MakeATransactionActivity"
+                android:noHistory="true">
         </activity>
         <activity android:name=".ShowDetailsActivity">
         </activity>

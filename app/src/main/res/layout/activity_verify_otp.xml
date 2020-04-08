@@ -11,7 +11,9 @@
 
     <EditText android:layout_width="match_parent" android:layout_marginTop="12dp" android:layout_height="wrap_content"
               android:id="@+id/txtEnterOtp"
-              android:hint="Enter otp to verify"/>
+              android:maxLength="6"
+              android:inputType="number"
+              android:hint="@string/enter_otp_to_verify"/>
 
     <Button android:layout_width="match_parent"
             android:layout_height="wrap_content"

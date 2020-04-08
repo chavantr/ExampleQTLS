@@ -1,9 +1,8 @@
 package com.mywings.twolevelqrcodeproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.mywings.twolevelqrcodeproject.binder.TransactionAdapter
 import com.mywings.twolevelqrcodeproject.model.Transaction
 import com.mywings.twolevelqrcodeproject.process.GetTransactionAsync
@@ -12,7 +11,6 @@ import com.mywings.twolevelqrcodeproject.process.ProgressDialogUtil
 import kotlinx.android.synthetic.main.activity_show_transaction.*
 
 class ShowTransactionActivity : AppCompatActivity(), OnTransactionListener {
-
 
     private lateinit var progressDialogUtil: ProgressDialogUtil
 

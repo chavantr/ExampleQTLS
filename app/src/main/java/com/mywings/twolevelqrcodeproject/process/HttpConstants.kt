@@ -6,6 +6,9 @@ object HttpConstants {
     const val LOAD_DATA = "GetProfile"
     const val LOGIN = "SQC_Login"
     const val GET_TRANSACTION = "GetTransaction"
+    const val NEW_TRANSACTION = "SQC_Transaction"
+
+
 
 
 }

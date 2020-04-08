@@ -38,4 +38,8 @@
     <string name="confirm">Confirm</string>
     <string name="otp_has_been_sent_to_your_register_mobile_number">Otp has been sent to your register mobile number.
     </string>
+    <string name="enter_amount">Enter amount</string>
+    <string name="enter_otp_to_verify">Enter otp to verify</string>
+    <string name="transfer_successfully">Transfer successfully</string>
+    <string name="done">Done</string>
 </resources>

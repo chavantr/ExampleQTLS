@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 return true
             }
             R.id.ic_transactions -> {
-                val makeTransactionActivity = Intent(this@MainActivity, MakeATransactionActivity::class.java)
+                val makeTransactionActivity = Intent(this@MainActivity, ShowTransactionActivity::class.java)
                 startActivity(makeTransactionActivity)
                 drawer_layout.closeDrawer(GravityCompat.START)
                 return true

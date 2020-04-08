@@ -31,6 +31,11 @@ class GetTransactionAsync : AsyncTask<Void, Void, ArrayList<Transaction>?>() {
         return null
     }
 
+    override fun onPostExecute(result: ArrayList<Transaction>?) {
+        super.onPostExecute(result)
+        onTransactionListener.onGetTransaction(result)
+    }
+
     fun setOnTransactionListener(onTransactionListener: OnTransactionListener) {
         this.onTransactionListener = onTransactionListener
         super.executeOnExecutor(THREAD_POOL_EXECUTOR)
