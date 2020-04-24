@@ -12,6 +12,7 @@ import com.mywings.twolevelqrcodeproject.process.ProgressDialogUtil
 import com.mywings.twolevelqrcodeproject.process.UserDataHolder
 import kotlinx.android.synthetic.main.activity_verify_otp.*
 import org.json.JSONObject
+import kotlin.math.pow
 import kotlin.random.Random
 
 class VerifyOtpActivity : AppCompatActivity(), OnSendOptionListener, OnMakeTransactionListener {
@@ -39,7 +40,7 @@ class VerifyOtpActivity : AppCompatActivity(), OnSendOptionListener, OnMakeTrans
 
     private fun initotp() {
         progressDialogUtil.show()
-        number = getRandomNumberString()
+        number = getRandomNumberString(6)
         phoneNumber = UserDataHolder.getInstance().selfUser.mobileNo
         input =
             "https://api.textlocal.in/send/?apiKey=wnl6P220GB4-NLTbWCaPwzfFPHRoSBz16bgyFjAsie&sender=TXTLCL&numbers=${phoneNumber}&message=${number}"
@@ -47,10 +48,17 @@ class VerifyOtpActivity : AppCompatActivity(), OnSendOptionListener, OnMakeTrans
         sendOtp.setSendOtpListener(this, input)
     }
 
-    private fun getRandomNumberString(): String {
-        val rnd = Random(100000)
+    private fun getRandomNumberString(range: Int): String {
+        /*val rnd = Random(100000)
         val number = rnd.nextInt(999999)
-        return String.format("%06d", number)
+        return String.format("%06d", number)*/
+
+        val rnd = Random(System.currentTimeMillis())
+
+        val number = 10.0.pow(range - 1)
+
+        return number.plus(rnd.nextInt(9.0.times(number).toInt())).toInt().toString()
+
     }
 
     override fun otpSent(result: String?) {

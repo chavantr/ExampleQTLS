@@ -17,7 +17,7 @@ class MakeATransactionActivity : AppCompatActivity() {
             if (txtToAccount.text.isNotEmpty()) {
                 val intent = Intent(this@MakeATransactionActivity, VerifyOtpActivity::class.java)
                 intent.putExtra("toAccount", txtToAccount.text.toString())
-                intent.putExtra("toAmount", txtToAccount.text.toString())
+                intent.putExtra("toAmount", txtToAmount.text.toString())
                 startActivity(intent)
             } else {
                 Toast.makeText(this@MakeATransactionActivity, "Enter account number", Toast.LENGTH_LONG).show()

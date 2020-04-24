@@ -115,6 +115,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 drawer_layout.closeDrawer(GravityCompat.START)
                 return true
             }
+            R.id.ic_logout -> {
+                val loginActivity = Intent(this@MainActivity, LoginActivity::class.java)
+                loginActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                loginActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                loginActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(loginActivity)
+                return true
+            }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true

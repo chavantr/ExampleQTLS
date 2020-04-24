@@ -27,7 +27,7 @@ class QRCodeScanActivity : AppCompatActivity(), OnDecodedCallback, OnLoginListen
 
     private val EXTERNAL_REQUEST: Int = 1001
     private lateinit var progressDialogUtil: ProgressDialogUtil
-    private  var email: String?=null
+    private var email: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

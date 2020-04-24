@@ -15,19 +15,19 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SuccessActivity">
+        <activity android:name=".SuccessActivity" android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".VerifyOtpActivity"
-                android:noHistory="true">
+                android:noHistory="true" android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ShowTransactionActivity">
+        <activity android:name=".ShowTransactionActivity" android:screenOrientation="portrait">
         </activity>
         <activity
-                android:name=".MakeATransactionActivity"
+                android:name=".MakeATransactionActivity" android:screenOrientation="portrait"
                 android:noHistory="true">
         </activity>
-        <activity android:name=".ShowDetailsActivity">
+        <activity android:name=".ShowDetailsActivity" android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".LoginActivity"
@@ -46,6 +46,7 @@
         <activity
                 android:name=".MainActivity"
                 android:label="@string/app_name"
+                android:screenOrientation="portrait"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
