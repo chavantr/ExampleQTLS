@@ -91,6 +91,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_settings -> {
+                isTransaction = false
                 val intent = Intent(this@MainActivity, QRCodeScanActivity::class.java)
                 intent.putExtra("email", user.emailId)
                 startActivity(intent)
@@ -101,11 +102,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-
+        isTransaction = true
         when (item.itemId) {
+
             R.id.ic_make_transaction -> {
-                val makeTransactionActivity = Intent(this@MainActivity, MakeATransactionActivity::class.java)
-                startActivity(makeTransactionActivity)
+                /* val makeTransactionActivity = Intent(this@MainActivity, MakeATransactionActivity::class.java)
+                 startActivity(makeTransactionActivity)*/
+                val intent = Intent(this@MainActivity, QRCodeScanActivity::class.java)
+                intent.putExtra("email", user.emailId)
+                startActivity(intent)
                 drawer_layout.closeDrawer(GravityCompat.START)
                 return true
             }
@@ -126,5 +131,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    companion object {
+        var isTransaction: Boolean = true
     }
 }

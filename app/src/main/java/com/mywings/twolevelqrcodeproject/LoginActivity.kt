@@ -33,8 +33,10 @@ class LoginActivity : AppCompatActivity(), OnLoginListener {
         progressDialogUtil.hide()
         if (null != user) {
             UserDataHolder.getInstance().selfUser = user
-            val intent = Intent(this@LoginActivity,MainActivity::class.java)
+            val intent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(intent)
+        } else {
+            Toast.makeText(this@LoginActivity, "Enter valid username and password", Toast.LENGTH_LONG).show()
         }
     }
 

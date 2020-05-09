@@ -11,7 +11,7 @@
             android:id="@+id/scanner"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:reticle_fraction="1"
+            app:reticle_fraction="0.5"
             app:reticle_color="@android:color/holo_green_light"
             app:allow_frontcamera="true"
             app:use_flash="true"

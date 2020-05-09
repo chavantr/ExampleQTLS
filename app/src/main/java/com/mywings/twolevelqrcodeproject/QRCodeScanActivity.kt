@@ -102,10 +102,20 @@ class QRCodeScanActivity : AppCompatActivity(), OnDecodedCallback, OnLoginListen
     override fun onLoginSuccess(user: User?) {
         progressDialogUtil.hide()
         if (null != user) {
-            UserDataHolder.getInstance().otherUser = user
-            val intent = Intent(this@QRCodeScanActivity, ShowDetailsActivity::class.java)
-            intent.putExtra("email", email)
-            startActivity(intent)
+            if (MainActivity.isTransaction) {
+                if (user.emailId == email) {
+                    val makeTransactionActivity = Intent(this@QRCodeScanActivity, MakeATransactionActivity::class.java)
+                    startActivity(makeTransactionActivity)
+                } else {
+                    Toast.makeText(this@QRCodeScanActivity, "Not allowed", Toast.LENGTH_LONG).show()
+                    finish()
+                }
+            } else {
+                UserDataHolder.getInstance().otherUser = user
+                val intent = Intent(this@QRCodeScanActivity, ShowDetailsActivity::class.java)
+                intent.putExtra("email", email)
+                startActivity(intent)
+            }
         }
     }
 }
